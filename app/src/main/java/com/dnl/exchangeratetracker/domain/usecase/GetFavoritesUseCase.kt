@@ -1,10 +1,10 @@
 package com.dnl.exchangeratetracker.domain.usecase
 
-import com.dnl.exchangeratetracker.data.Repository
+import com.dnl.exchangeratetracker.data.ExchangeRateRepositoryImpl
 import javax.inject.Inject
 
 class GetFavoritesUseCase @Inject constructor(
-    private val repository: Repository
+    private val exchangeRateRepositoryImpl: ExchangeRateRepositoryImpl
 ) {
-    fun execute() = repository.getFavorites()
+    fun execute() = exchangeRateRepositoryImpl.getFavorites()
 }

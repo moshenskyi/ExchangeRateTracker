@@ -2,11 +2,12 @@ package com.dnl.exchangeratetracker.di
 
 import android.app.Application
 import androidx.room.Room
-import com.dnl.exchangeratetracker.data.Repository
+import com.dnl.exchangeratetracker.data.ExchangeRateRepositoryImpl
 import com.dnl.exchangeratetracker.data.local.CurrencyExchangeDatabase
 import com.dnl.exchangeratetracker.data.local.FavoritesLocalDataSource
 import com.dnl.exchangeratetracker.data.local.RatesLocalDataSource
 import com.dnl.exchangeratetracker.data.remote.OpenExchangeRatesApi
+import com.dnl.exchangeratetracker.domain.ExchangeRateRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -59,8 +60,8 @@ object AppModule {
         ratesLocalDataSource: RatesLocalDataSource,
         favoritesLocalDataSource: FavoritesLocalDataSource,
         api: OpenExchangeRatesApi
-    ): Repository {
-        return Repository(ratesLocalDataSource, favoritesLocalDataSource, api)
+    ): ExchangeRateRepository {
+        return ExchangeRateRepositoryImpl(ratesLocalDataSource, favoritesLocalDataSource, api)
     }
 
     @Provides
