@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ExchangeRateTracker</string>
+
+    <!--  Actions  -->
+    <string name="action_add_to_watchlist">Add new currency to watchlist</string>
+    <string name="action_delete_from_watchlist">Delete from watchlist</string>
+    <string name="action_search">Search</string>
+    <string name="action_clear_search">Clear search</string>
+
+    <string name="add_to_watchlist_title">Select Currencies to Track</string>
+
+    <!--  Error messages  -->
+    <string name="error_empty_response">Hmmm… Nothing found</string>
+    <string name="error_unknown">Sorry, we have internal problems. Please try again later</string>
+    <string name="error_network">Seems like you are not connected to the Internet. Please, try again later</string>
+
+    <!--  Misc  -->
+    <string name="searchbar_hint">Search currencies…</string>
+    <string name="action_back">Back</string>
+</resources>
