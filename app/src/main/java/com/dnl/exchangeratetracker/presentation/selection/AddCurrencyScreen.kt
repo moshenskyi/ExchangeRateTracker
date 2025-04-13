@@ -75,10 +75,7 @@ private fun CurrencyList(
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         items(rates) { rate ->
-            CurrencyItem(
-                rate = rate,
-                onClick = { viewModel.toggleFavorite(rate) }
-            ) {
+            CurrencyItem(rate = rate) {
                 CircularCheckbox(
                     checked = favorites?.firstOrNull { it.ticker == rate.ticker } != null,
                     onCheckedChange = { viewModel.toggleFavorite(rate) }

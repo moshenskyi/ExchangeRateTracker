@@ -1,6 +1,5 @@
 package com.dnl.exchangeratetracker.presentation.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,13 +21,10 @@ import com.dnl.exchangeratetracker.domain.Rate
 @Composable
 fun CurrencyItem(
     rate: Rate,
-    onClick: () -> Unit,
     content: @Composable () -> Unit
 ) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onClick() },
+        modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -63,5 +59,5 @@ fun CurrencyItem(
 @Preview
 @Composable
 fun CurrencyItemPreview() {
-    CurrencyItem(Rate("USD", "1.0"), onClick = {}) { }
+    CurrencyItem(Rate("USD", "1.0")) { }
 }

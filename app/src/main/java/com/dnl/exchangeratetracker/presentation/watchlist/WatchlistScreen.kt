@@ -60,8 +60,7 @@ fun WatchList(
     ) {
         items(rates, key = { item -> item.ticker }) { rate ->
             CurrencyItem(
-                rate = rate,
-                onClick = { onClick(rate.ticker) }
+                rate = rate
             ) {
                 IconButton(onClick = { onClick(rate.ticker) }) {
                     Icon(
