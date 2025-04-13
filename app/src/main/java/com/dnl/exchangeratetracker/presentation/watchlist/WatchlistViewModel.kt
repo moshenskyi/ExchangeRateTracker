@@ -35,7 +35,8 @@ class WatchlistViewModel @Inject constructor(
     getFavoritesUseCase: GetFavoritesUseCase,
     getAllRatesUseCase: GetAllRatesUseCase
 ) : ViewModel() {
-    private val _errorMessage: MutableStateFlow<Int?> = MutableStateFlow(R.string.error_empty_response)
+    private val _errorMessage: MutableStateFlow<Int?> =
+        MutableStateFlow(R.string.error_empty_response)
     val errorMessage = _errorMessage.asStateFlow()
 
     private val _refreshTrigger = MutableSharedFlow<Unit>(replay = 1)
@@ -83,8 +84,8 @@ class WatchlistViewModel @Inject constructor(
     init {
         autoRefreshJob = viewModelScope.launch {
             while (isActive) {
-                delay(REFRESH_DELAY)
                 refresh()
+                delay(REFRESH_DELAY)
             }
         }
     }
